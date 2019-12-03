@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="剑指offer/" kind="src" path="src"/>
+	<classpathentry kind="src" path="bin"/>
+	<classpathentry kind="src" path=".settings"/>
+	<classpathentry kind="src" path="src/剑指offer"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_211"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
