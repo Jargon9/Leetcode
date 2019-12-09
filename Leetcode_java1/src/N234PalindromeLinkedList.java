@@ -10,7 +10,7 @@ public class N234PalindromeLinkedList {
         }
     }
 
-    public static boolean isPalindrome(ListNode head) {
+    public static boolean isPalindrome1(ListNode head) {
         if (head == null) return true;
         ListNode p1 = head, p2;
         ArrayList<Integer> arr = new ArrayList<>();
@@ -28,9 +28,29 @@ public class N234PalindromeLinkedList {
         }
         return true;
     }
+    public static boolean isPalindrome(ListNode head){
+        ListNode fast=head, slow=head, slowhead = null;
+        if(fast==null||fast.next==null||(fast.next.next==null&&fast.val==fast.next.val)) return true;
+        while(fast.next!=null&&fast.next.next!=null){
+            fast = fast.next.next;
+            ListNode temp = slow, temp1 = slow.next;
+            temp.next = slowhead;
+            slowhead = temp;
+            slow = temp1;
+        }
+        ListNode fastHead = slow;
+        while(fastHead!=null&&slowhead!=null){
+            if(fastHead.val!=slowhead.val){
+                return false;
+            }
+            fastHead = fastHead.next;
+            slowhead = slowhead.next;
+        }
+        return true;
+    }
 
     public static void main(String[] arg) {
-        int[] a = {1, 2, 3, 2, 1};
+        int[] a = {1, 0, 0, 1, 1};
         ListNode head = new ListNode(1);
         ListNode p1 = head;
         for (int i = 1; i < a.length; i++) {
