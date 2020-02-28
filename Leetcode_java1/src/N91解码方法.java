@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class N91解码方法 {
     public static int numDecodings(String s) {
@@ -24,6 +25,15 @@ public class N91解码方法 {
     }
     public static void main(String[] args){
         String s = "01";
-        System.out.println(numDecodings(s));
+        s =s +"i";
+        int num = (int)Math.pow(10,3);
+        String t = new String();
+        String[] temp = s.split(" ");
+        int len = temp.length;
+        ArrayList<String>res = new ArrayList<>();
+        String temp1 = res.get(len) + " ";
+        res.set(0, temp1);
+        System.out.println(num);
+
     }
 }
